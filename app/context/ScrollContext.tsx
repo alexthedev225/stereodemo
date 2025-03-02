@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
+import { Suspense } from 'react';
 
 interface ScrollContextType {
   scrollToSection: (id: string) => void;
@@ -16,26 +17,31 @@ const ScrollContext = createContext<ScrollContextType>({
 export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
   const [section, setSection] = useState<string | null>(null);
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
-  useEffect(() => {
-    const sectionFromURL = searchParams.get("section");
-    if (sectionFromURL) {
-      // Scroll vers la section uniquement si on est sur la page d'accueil
-      if (pathname === "/") {
-        setSection(sectionFromURL);
-        setTimeout(() => {
-          const targetElement = document.getElementById(sectionFromURL);
-          if (targetElement) {
-            targetElement.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-        }, 300); // Laisser le temps au rendu
+  const SearchParamsWrapper = () => {
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+      const sectionFromURL = searchParams.get("section");
+      if (sectionFromURL) {
+        // Scroll vers la section uniquement si on est sur la page d'accueil
+        if (pathname === "/") {
+          setSection(sectionFromURL);
+          setTimeout(() => {
+            const targetElement = document.getElementById(sectionFromURL);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          }, 300); // Laisser le temps au rendu
+        }
       }
-    }
-  }, [searchParams, pathname]); // Le pathname doit aussi être dans les dépendances pour surveiller les changements d'URL
+    }, [searchParams]); // Le pathname doit aussi être dans les dépendances pour surveiller les changements d'URL
+
+    return null;
+  };
 
   const scrollToSection = (id: string) => {
     setSection(id);
@@ -49,6 +55,9 @@ export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <ScrollContext.Provider value={{ scrollToSection, section }}>
+      <Suspense fallback={<div>Loading...</div>}>
+        <SearchParamsWrapper />
+      </Suspense>
       {children}
     </ScrollContext.Provider>
   );
