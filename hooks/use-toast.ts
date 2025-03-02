@@ -31,6 +31,11 @@ type State = {
   toasts: ToasterToast[]
 }
 
+type UpdateToastAction = {
+  type: typeof actionTypes.UPDATE_TOAST
+  toast: ToasterToast
+}
+
 type Action =
   | {
       type: typeof actionTypes.ADD_TOAST
@@ -38,12 +43,13 @@ type Action =
     }
   | {
       type: typeof actionTypes.DISMISS_TOAST
-      toastId?: ToasterToast['id']
+      toastId: ToasterToast['id']
     }
   | {
       type: typeof actionTypes.REMOVE_TOAST
       toastId?: ToasterToast['id']
     }
+  | UpdateToastAction
 
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
@@ -67,6 +73,13 @@ const reducer = (state: State, action: Action): State => {
       return {
         ...state,
         toasts: state.toasts.filter((toast) => toast.id !== action.toastId),
+      }
+    case actionTypes.UPDATE_TOAST:
+      return {
+        ...state,
+        toasts: state.toasts.map((toast) =>
+          toast.id === action.toast.id ? action.toast : toast
+        ),
       }
   }
 }
