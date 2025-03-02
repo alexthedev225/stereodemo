@@ -10,7 +10,7 @@ type ToasterToast = {
   title?: React.ReactNode
   description?: React.ReactNode
   action?: React.ReactNode
-  status?: 'success' | 'error' | 'info' | 'warning'
+  status?: 'success' | 'error' | 'info' | 'warning' | 'hidden'
 }
 
 const actionTypes = {
@@ -43,11 +43,11 @@ type Action =
     }
   | {
       type: typeof actionTypes.DISMISS_TOAST
-      toastId: ToasterToast['id']
+      toastId: string
     }
   | {
       type: typeof actionTypes.REMOVE_TOAST
-      toastId?: ToasterToast['id']
+      toastId: string
     }
   | UpdateToastAction
 
@@ -59,16 +59,13 @@ const reducer = (state: State, action: Action): State => {
         toasts: [action.toast, ...state.toasts].slice(0, TOAST_LIMIT),
       }
 
-    case actionTypes.DISMISS_TOAST: {
-      const { toastId } = action
-
+    case actionTypes.DISMISS_TOAST:
       return {
         ...state,
         toasts: state.toasts.map((toast) =>
-          toast.id === toastId ? { ...toast, status: 'error' } : toast
+          toast.id === action.toastId ? { ...toast, status: 'hidden' } : toast
         ),
       }
-    }
     case actionTypes.REMOVE_TOAST:
       return {
         ...state,
@@ -81,6 +78,8 @@ const reducer = (state: State, action: Action): State => {
           toast.id === action.toast.id ? action.toast : toast
         ),
       }
+    default:
+      return state
   }
 }
 
@@ -104,7 +103,8 @@ function toast({ ...props }: ToasterToast) {
       toast: { ...props, id },
     })
 
-  const dismiss = () => dispatch({ type: actionTypes.DISMISS_TOAST, toastId: id })
+  const dismiss = () =>
+    dispatch({ type: actionTypes.DISMISS_TOAST, toastId: id })
 
   dispatch({
     type: actionTypes.ADD_TOAST,
@@ -136,12 +136,12 @@ function useToast() {
         listeners.splice(index, 1)
       }
     }
-  }, [state])
+  }, [])
 
   return {
     ...state,
     toast,
-    dismiss: (toastId?: string) =>
+    dismiss: (toastId: string) =>
       dispatch({ type: actionTypes.DISMISS_TOAST, toastId }),
   }
 }
