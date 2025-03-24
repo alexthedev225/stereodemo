@@ -55,11 +55,11 @@ const MusicPromo = () => {
                   hover:bg-white/20 transition-colors"
               >
                 <HeadphonesIcon className="h-4 w-4 animate-pulse" />
-                Technologie Immersive
+                Démo Interactive
               </Badge>
             </TooltipTrigger>
             <TooltipContent>
-              <p>Technologie audio de pointe avec réduction de bruit active</p>
+              <p>Cette démonstration simule une expérience utilisateur fictive</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
@@ -68,17 +68,16 @@ const MusicPromo = () => {
           className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight 
           text-transparent bg-clip-text bg-gradient-to-r from-white to-white/80"
         >
-          La musique sous un nouveau jour
+          Une expérience imaginaire
         </h1>
 
         <p
           className="text-neutral-100 text-sm sm:text-base md:text-lg lg:text-xl 
           opacity-90 leading-relaxed"
         >
-          Découvrez une expérience sonore révolutionnaire qui transcende les
-          limites de l&apos;écoute traditionnelle. Nos écouteurs haute fidélité
-          offrent une immersion totale, avec une technologie de pointe qui
-          capture chaque nuance, chaque émotion de votre musique préférée.
+          Bienvenue dans cette démonstration technique explorant les possibilités
+          du design interactif. Ce projet fictif illustre comment une expérience
+          utilisateur moderne pourrait être conçue pour un produit audio imaginaire.
         </p>
 
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -89,7 +88,7 @@ const MusicPromo = () => {
               transition-all group relative overflow-hidden"
           >
             <Link href="/product-page" className="z-30">
-              Commander Maintenant
+              Explorer la Démo
               <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></span>
             </Link>
           </Button>

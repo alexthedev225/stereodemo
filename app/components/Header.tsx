@@ -63,7 +63,7 @@ const Header: React.FC<Props> = ({ backgroundImage }) => {
               sm:text-sm
             "
           >
-            Édition Limitée
+            Projet Fictif - Demo Uniquement
           </Badge>
 
           <h1
@@ -80,7 +80,7 @@ const Header: React.FC<Props> = ({ backgroundImage }) => {
           >
             Stéréo <span className="text-pink-500">ERD-3083</span>
             <br className="hidden sm:block" />
-            Réinventer le son
+            Un Concept Imaginaire
           </h1>
 
           <p
@@ -95,8 +95,7 @@ const Header: React.FC<Props> = ({ backgroundImage }) => {
               sm:mb-8
             "
           >
-            Une expérience audio révolutionnaire qui transcende les limites de
-            la perception sonore.
+            Ce site est une démonstration technique. Aucun produit réel n'est en vente.
           </p>
 
           <div className="flex justify-center space-x-4">

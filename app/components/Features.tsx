@@ -114,7 +114,7 @@ const Features: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
           >
-            Découvrez nos fonctionnalités
+            Fonctionnalités Démonstratives
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -122,7 +122,7 @@ const Features: React.FC = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="text-lg text-gray-600 max-w-2xl mx-auto"
           >
-            Des écouteurs conçus pour offrir une expérience sonore incomparable
+            [Projet Demo] Ces caractéristiques sont présentées à titre d'exemple uniquement
           </motion.p>
         </div>
 

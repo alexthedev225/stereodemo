@@ -19,7 +19,7 @@ const Reviews = () => {
             transition={{ duration: 0.5 }}
             className="text-4xl font-bold tracking-tight text-foreground mb-4"
           >
-            Nos clients adorent Stéréo Démo
+            Avis Fictifs pour Démonstration
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -27,7 +27,7 @@ const Reviews = () => {
             transition={{ delay: 0.3, duration: 0.5 }}
             className="text-xl text-muted-foreground max-w-2xl mx-auto"
           >
-            Découvrez les témoignages authentiques de passionnés de musique qui ont transformé leur expérience sonore.
+            Ces témoignages sont imaginaires et servent uniquement à illustrer les fonctionnalités du site.
           </motion.p>
         </div>
 
@@ -49,10 +49,11 @@ const Reviews = () => {
           <Card className="max-w-xl mx-auto bg-secondary/10 border-none">
             <CardHeader>
               <CardTitle className="text-2xl">
-                Votre expérience compte
+                Site de Démonstration
               </CardTitle>
               <CardDescription>
-                Chaque avis nous aide à améliorer nos produits et à offrir une expérience sonore toujours plus exceptionnelle.
+                Cette interface est un projet expérimental créé à des fins de démonstration technique.
+                Aucune transaction réelle n'est possible.
               </CardDescription>
             </CardHeader>
           </Card>

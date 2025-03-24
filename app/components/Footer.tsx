@@ -1,158 +1,58 @@
 "use client";
 
 import Link from "next/link";
-import { 
-  Facebook, 
-  Instagram, 
-  Twitter, 
-  Linkedin, 
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+import { Github, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
-
-const socialLinks = [
-  { 
-    icon: Facebook, 
-    href: "https://facebook.com/stereodemo",
-    label: "Facebook" 
-  },
-  { 
-    icon: Instagram, 
-    href: "https://instagram.com/stereodemo",
-    label: "Instagram" 
-  },
-  { 
-    icon: Twitter, 
-    href: "https://twitter.com/stereodemo",
-    label: "Twitter" 
-  },
-  { 
-    icon: Linkedin, 
-    href: "https://linkedin.com/company/stereodemo",
-    label: "LinkedIn" 
-  }
-];
 
 const Footer = () => {
   return (
-    <footer className="bg-background py-16">
-      <div className="container mx-auto px-4">
+    <footer className="bg-white border-t border-neutral-200">
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Colonne 1: Logo et Description */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="space-y-4"
-          >
-            <h2 className="text-2xl font-bold text-foreground">Stéréo Démo</h2>
-            <p className="text-muted-foreground">
-              Révolutionnez votre expérience musicale avec nos écouteurs haute
-              fidélité conçus pour les passionnés.
+          {/* Colonne Projet */}
+          <div className="space-y-3">
+            <h3 className="font-semibold text-neutral-800">Projet Expérimental</h3>
+            <p className="text-sm text-neutral-600">
+              Cette interface est une démonstration technique créée à des fins 
+              d&apos;apprentissage. Aucun produit réel n&apos;est commercialisé.
             </p>
+          </div>
 
-            <div className="flex space-x-4">
-              {socialLinks.map(({ icon: Icon, href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                  aria-label={label}
-                >
-                  <Icon className="w-6 h-6" />
-                </Link>
-              ))}
-            </div>
-          </motion.div>
+          {/* Colonne Technologies */}
+          <div className="space-y-3">
+            <h3 className="font-semibold text-neutral-800">Technologies</h3>
+            <ul className="text-sm text-neutral-600 space-y-2">
+              <li>Next.js</li>
+              <li>TailwindCSS</li>
+              <li>Framer Motion</li>
+              <li>Shadcn UI</li>
+            </ul>
+          </div>
 
-          {/* Colonne 2: Liens Rapides */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="space-y-4"
-          >
-            <h3 className="text-xl font-semibold text-foreground mb-4">
-              Liens Rapides
-            </h3>
-            <nav className="space-y-2">
-              {[
-                { label: "Accueil", href: "/" },
-                { label: "Produits", href: "/produits" },
-                { label: "À Propos", href: "/about" },
-                { label: "Contact", href: "/contact" },
-                { label: "Support", href: "/support" },
-              ].map(({ label, href }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="block text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </motion.div>
-
-          {/* Colonne 3: Newsletter */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="space-y-4"
-          >
-            <Card className="bg-secondary/10 border-none">
-              <CardContent className="p-6 space-y-4">
-                <h3 className="text-xl font-semibold text-foreground">
-                  Restez Connecté
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  Abonnez-vous à notre newsletter pour des offres exclusives
-                </p>
-                <div className="flex space-x-2">
-                  <Input
-                    type="email"
-                    placeholder="Votre email"
-                    className="flex-grow"
-                  />
-                  <Button>S&apos;abonner</Button>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-
-        <Separator className="my-8" />
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          className="text-center text-muted-foreground"
-        >
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-4">
-            <p>{new Date().getFullYear()} Stéréo Démo. Tous droits réservés.</p>
-            <div className="flex space-x-4">
-              <Link
-                href="/mentions-legales"
-                className="hover:text-primary transition-colors"
+          {/* Colonne Liens */}
+          <div className="space-y-3">
+            <h3 className="font-semibold text-neutral-800">Ressources</h3>
+            <div className="flex flex-col space-y-2">
+              <Link 
+                href="https://github.com" 
+                className="flex items-center text-sm text-neutral-600 hover:text-neutral-900"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Mentions Légales
-              </Link>
-              <Link
-                href="/politique-confidentialite"
-                className="hover:text-primary transition-colors"
-              >
-                Politique de Confidentialité
+                <Github className="h-4 w-4 mr-2" />
+                Code source
+                <ExternalLink className="h-3 w-3 ml-1" />
               </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-8 pt-8 border-t border-neutral-200">
+          <p className="text-center text-sm text-neutral-500">
+            © {new Date().getFullYear()} Démo Technique - Tous droits réservés
+          </p>
+        </div>
       </div>
     </footer>
   );

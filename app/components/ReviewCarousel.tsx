@@ -11,27 +11,27 @@ import { Badge } from "@/components/ui/badge";
 const reviews = [
   {
     id: 1,
-    name: "Alice Dupont",
+    name: "Utilisateur Test 1",
     avatar: "/avatars/alice.jpg",
-    text: "Un son incroyable ! J'ai redécouvert ma musique préférée avec une qualité exceptionnelle.",
+    text: "Ceci est un avis fictif pour démontrer la mise en page. Aucun produit réel n'est concerné.",
     rating: 5,
-    profession: "Musicienne",
+    profession: "Profil Demo",
   },
   {
     id: 2,
-    name: "Marc Lemoine",
+    name: "Utilisateur Test 2",
     avatar: "/avatars/marc.jpg", 
-    text: "Très confortable et une autonomie de batterie impressionnante. Un must-have !",
+    text: "Un autre exemple d'avis fictif pour illustrer le fonctionnement du carousel.",
     rating: 4,
-    profession: "Ingénieur",
+    profession: "Demo",
   },
   {
     id: 3,
-    name: "Sophie Martin",
+    name: "Utilisateur Test 3",
     avatar: "/avatars/sophie.jpg",
-    text: "Le design est magnifique et le son est parfait. Je recommande à 100% !",
+    text: "Cette interface est purement démonstrative. Aucun produit n'est réellement en vente.",
     rating: 5,
-    profession: "Designer",
+    profession: "Test",
   },
 ];
 

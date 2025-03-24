@@ -138,12 +138,16 @@ const ProductDetail = () => {
           transition={{ duration: 0.6 }}
         >
           <Badge variant="outline" className="mb-4 text-pink-600">
-            Édition Limitée
+            Projet Demo - Produit Fictif
           </Badge>
 
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Casque Stereo Pro
+            Casque Stereo Pro (Démo)
           </h1>
+
+          <p className="text-lg text-gray-600 mb-6">
+            Note : Ceci est un projet expérimental à but démonstratif uniquement. Aucun produit réel n'est en vente.
+          </p>
 
           <p className="text-lg text-gray-600 mb-6">
             Couleur :
@@ -260,10 +264,9 @@ const ProductDetail = () => {
               animate={{ opacity: 1, y: 0 }}
               className="mt-6 text-green-600 bg-green-50 p-4 rounded-lg"
             >
-              <p className="font-semibold">Paiement réussi !</p>
+              <p className="font-semibold">Simulation de paiement réussie !</p>
               <p className="text-sm">
-                Merci pour votre achat. Un récapitulatif vous sera envoyé par
-                email.
+                Ceci est une démonstration - aucune transaction réelle n'a été effectuée.
               </p>
             </motion.div>
           )}
@@ -307,12 +310,10 @@ const ProductDetail = () => {
                 className="mt-4 space-y-4 text-gray-700"
               >
                 <div>
-                  <h3 className="font-semibold mb-2">
-                    Politique d&apos;échange et de remboursement
-                  </h3>
+                  <h3 className="font-semibold mb-2">Important - Projet Demo</h3>
                   <p className="text-sm text-gray-600">
-                    Les retours sont possibles dans les 30 jours suivant
-                    l&apos;achat.
+                    Ce site est une démonstration technique. Aucun produit réel n'est disponible à la vente.
+                    Les prix et caractéristiques sont fictifs.
                   </p>
                 </div>
                 <div>

@@ -135,10 +135,11 @@ const PaymentForm = ({
       <CardHeader>
         <CardTitle className="flex items-center space-x-2">
           <CreditCard className="h-6 w-6 text-pink-500" />
-          <span>Détails du Paiement</span>
+          <span>DÉMO - Ne pas entrer de vraies informations</span>
         </CardTitle>
         <CardDescription>
-          Paiement sécurisé avec cryptage de bout en bout
+          Ceci est une démonstration. Aucune transaction réelle ne sera effectuée.
+          N'entrez PAS de véritables données de carte bancaire.
         </CardDescription>
       </CardHeader>
       <CardContent>
