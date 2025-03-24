@@ -32,10 +32,11 @@ const featureVariants = {
 const Features: React.FC = () => {
   const features = [
     {
-      icon: SpeakerWaveIcon,
+        icon: SpeakerWaveIcon,
       iconColor: "text-blue-400",
       title: "Son de haute qualité",
       description:
+
         "Profitez d'un son immersif avec des basses profondes et des aigus cristallins pour une expérience audio exceptionnelle.",
       badge: "Premium Audio",
       tooltipDetails: {
@@ -102,10 +103,7 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <section
-      id="features"
-      className="w-full py-16 md:py-24 bg-white"
-    >
+    <section id="features" className="w-full py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <motion.h2
@@ -122,7 +120,8 @@ const Features: React.FC = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="text-lg text-gray-600 max-w-2xl mx-auto"
           >
-            [Projet Demo] Ces caractéristiques sont présentées à titre d'exemple uniquement
+            [Projet Demo] Ces caractéristiques sont présentées à titre
+            d&apos;exemple uniquement
           </motion.p>
         </div>
 
@@ -213,7 +212,7 @@ const Features: React.FC = () => {
                       </CardContent>
                     </Card>
                   </TooltipTrigger>
-                  <TooltipContent 
+                  <TooltipContent
                     side="right"
                     align="center"
                     className="
@@ -228,7 +227,7 @@ const Features: React.FC = () => {
                   >
                     <div className="space-y-3">
                       <div className="flex items-center space-x-3">
-                        <feature.icon 
+                        <feature.icon
                           className={`
                             h-6 w-6 
                             ${feature.iconColor}
@@ -241,8 +240,8 @@ const Features: React.FC = () => {
                       <div className="border-t border-pink-100 my-2"></div>
                       <ul className="space-y-1 text-sm text-gray-700">
                         {feature.tooltipDetails.details.map((detail, idx) => (
-                          <li 
-                            key={idx} 
+                          <li
+                            key={idx}
                             className="
                               flex 
                               items-center 

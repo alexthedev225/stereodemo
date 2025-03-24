@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Github, ExternalLink } from "lucide-react";
-import { motion } from "framer-motion";
 
 const Footer = () => {
   return (

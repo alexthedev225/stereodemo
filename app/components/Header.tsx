@@ -95,7 +95,8 @@ const Header: React.FC<Props> = ({ backgroundImage }) => {
               sm:mb-8
             "
           >
-            Ce site est une démonstration technique. Aucun produit réel n'est en vente.
+            Ce site est une démonstration technique. Aucun produit réel
+            n&apos;est en vente.
           </p>
 
           <div className="flex justify-center space-x-4">

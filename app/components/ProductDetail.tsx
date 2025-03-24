@@ -146,7 +146,8 @@ const ProductDetail = () => {
           </h1>
 
           <p className="text-lg text-gray-600 mb-6">
-            Note : Ceci est un projet expérimental à but démonstratif uniquement. Aucun produit réel n'est en vente.
+            Note : Ceci est un projet expérimental à but démonstratif
+            uniquement. Aucun produit réel n&apos;est en vente.
           </p>
 
           <p className="text-lg text-gray-600 mb-6">
@@ -266,7 +267,8 @@ const ProductDetail = () => {
             >
               <p className="font-semibold">Simulation de paiement réussie !</p>
               <p className="text-sm">
-                Ceci est une démonstration - aucune transaction réelle n'a été effectuée.
+                Ceci est une démonstration - aucune transaction réelle n&apos;a
+                été effectuée.
               </p>
             </motion.div>
           )}
@@ -310,10 +312,13 @@ const ProductDetail = () => {
                 className="mt-4 space-y-4 text-gray-700"
               >
                 <div>
-                  <h3 className="font-semibold mb-2">Important - Projet Demo</h3>
+                  <h3 className="font-semibold mb-2">
+                    Important - Projet Demo
+                  </h3>
                   <p className="text-sm text-gray-600">
-                    Ce site est une démonstration technique. Aucun produit réel n'est disponible à la vente.
-                    Les prix et caractéristiques sont fictifs.
+                    Ce site est une démonstration technique. Aucun produit réel
+                    n&apos;est disponible à la vente. Les prix et
+                    caractéristiques sont fictifs.
                   </p>
                 </div>
                 <div>

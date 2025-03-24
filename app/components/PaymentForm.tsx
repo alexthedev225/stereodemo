@@ -138,8 +138,8 @@ const PaymentForm = ({
           <span>DÉMO - Ne pas entrer de vraies informations</span>
         </CardTitle>
         <CardDescription>
-          Ceci est une démonstration. Aucune transaction réelle ne sera effectuée.
-          N'entrez PAS de véritables données de carte bancaire.
+          Ceci est une démonstration. Aucune transaction réelle ne sera
+          effectuée. N&apos;entrez PAS de véritables données de carte bancaire.
         </CardDescription>
       </CardHeader>
       <CardContent>
